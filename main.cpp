@@ -158,6 +158,14 @@ main(){
 
     for (int size = 1000; size <= 200000; size += 10000) {
         vector<int> vt = randomVector(size);
+
+        vector<int> vt_bubble = vt;
+        vector<int> vt_quick = vt;
+        vector<int> vt_insertion = vt;
+        vector<int> vt_merge = vt;
+        vector<int> vt_shell = vt;
+        vector<int> vt_selection = vt;
+
     }
 
     outputFile.close();
