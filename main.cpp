@@ -1,7 +1,31 @@
 #include <iostream>
 #include <vector>
+#include <fstream> 
+#include <cstdlib> 
+#include <chrono> 
+#include <iomanip>
 
 using namespace std;
+using namespace chrono;
+
+void printArray(const vector<int> &v){
+    int n = v.size();
+    for(int i = 0; i < n; i++){
+        cout << v[i] << " ";
+    }
+    cout << endl;
+}
+
+vector<int> randomVector(int size) {
+    vector<int> vector(size);
+    srand(time(nullptr));
+
+    for(int i = 0; i < size; i++) {
+        vector[i] = rand() % 100;
+    }
+   
+    return vector;
+}
 
 // Bubble Sort
 void bubbleSort(vector<int> &v) {
@@ -130,5 +154,12 @@ void selectionSort(vector<int> &v) {
     }
 }
 main(){
+    ofstream outputFile("tempo_execucao.txt");
+
+    for (int size = 1000; size <= 200000; size += 10000) {
+        vector<int> vt = randomVector(size);
+    }
+
+    outputFile.close();
     return 0;
 }
