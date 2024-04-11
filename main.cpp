@@ -201,8 +201,29 @@ main(){
         stop = high_resolution_clock::now();
         auto duration_selection = duration_cast<duration<double>>(stop - start);
 
+        if (size == 1000) {
+            outputFile << "1," << "1000," << fixed << setprecision(3) << duration_bubble.count() * 1000.0 << endl;
+            outputFile << "2," << "1000," << fixed << setprecision(3) << duration_insertion.count() * 1000.0 << endl;
+            outputFile << "3," << "1000," << fixed << setprecision(3) << duration_selection.count() * 1000.00 <<endl;
+            outputFile << "4," << "1000," << fixed << setprecision(3) << duration_shell.count() * 1000.0 << endl;
+            outputFile << "5," << "1000," << fixed << setprecision(3) << duration_quick.count() * 1000.0 << endl;
+            outputFile << "6," << "1000," << fixed << setprecision(3) << duration_merge.count() * 1000.0 << endl;
+            
+        }
+
+ 	else {
+            outputFile << "1," << size << "," << fixed << setprecision(3) << duration_bubble.count() * 1000.0 << endl;
+            outputFile << "2," << size << "," << fixed << setprecision(3) << duration_insertion.count() * 1000.0 << endl;
+            outputFile << "3," << size << "," << fixed << setprecision(3) << duration_selection.count() * 1000.0 << endl;
+            outputFile << "4," << size << "," << fixed << setprecision(3) << duration_shell.count() * 1000.0 << endl;
+            outputFile << "5," << size << "," << fixed << setprecision(3) << duration_quick.count() * 1000.0 << endl;
+            outputFile << "6," << size << "," << fixed << setprecision(3) << duration_merge.count() * 1000.0 << endl;
+    
+
+
 
     }
+}
 
     outputFile.close();
     return 0;
