@@ -166,6 +166,42 @@ main(){
         vector<int> vt_shell = vt;
         vector<int> vt_selection = vt;
 
+        auto start = high_resolution_clock::now();
+        bubbleSort(vt_bubble);
+        auto stop = high_resolution_clock::now();
+        auto duration_bubble = duration_cast<duration<double>>(stop - start);
+
+
+        start = high_resolution_clock::now();
+        quickSort(vt_quick, 0, vt_quick.size() - 1);
+        stop = high_resolution_clock::now();
+        auto duration_quick = duration_cast<duration<double>>(stop - start);
+
+
+        start = high_resolution_clock::now();
+        insertionSort(vt_insertion);
+        stop = high_resolution_clock::now();
+        auto duration_insertion = duration_cast<duration<double>>(stop - start);
+
+
+        start = high_resolution_clock::now();
+        mergeSort(vt_merge, 0, vt_merge.size() - 1);
+        stop = high_resolution_clock::now();
+        auto duration_merge = duration_cast<duration<double>>(stop - start);
+
+
+        start = high_resolution_clock::now();
+        shellSort(vt_shell);
+        stop = high_resolution_clock::now();
+        auto duration_shell = duration_cast<duration<double>>(stop - start);
+
+
+        start = high_resolution_clock::now();
+        selectionSort(vt_selection);
+        stop = high_resolution_clock::now();
+        auto duration_selection = duration_cast<duration<double>>(stop - start);
+
+
     }
 
     outputFile.close();
