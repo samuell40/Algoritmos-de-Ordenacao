@@ -156,7 +156,7 @@ void selectionSort(vector<int> &v) {
 main(){
     ofstream outputFile("tempo_execucao.txt");
 
-    for (int size = 1000; size <= 200000; size += 10000) {
+    for (int size = 1000; size <= 200000; size += 100000) {
         vector<int> vt = randomVector(size);
 
         vector<int> vt_bubble = vt;
@@ -218,9 +218,6 @@ main(){
             outputFile << "4," << size << "," << fixed << setprecision(3) << duration_shell.count() * 1000.0 << endl;
             outputFile << "5," << size << "," << fixed << setprecision(3) << duration_quick.count() * 1000.0 << endl;
             outputFile << "6," << size << "," << fixed << setprecision(3) << duration_merge.count() * 1000.0 << endl;
-    
-
-
 
     }
 }
